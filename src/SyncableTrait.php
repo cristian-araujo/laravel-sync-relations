@@ -108,9 +108,9 @@ trait SyncableTrait
                     foreach ($new as $index => $item) {
                         $item = $relatedModel->beforeSync($item);
 
-                        if ($orderProp = $relatedModel->getOrderAttributeName()) {
+                        /* if ($orderProp = $relatedModel->getOrderAttributeName()) {
                             Arr::set($item, $orderProp, count($new) + 1 - $index);
-                        }
+                        } */
 
                         $related = SyncableHelpers::relatedExists($relationshipModel, $item);
                         if (!$related) {
